@@ -1,6 +1,7 @@
 var Firebase = require("firebase"),
-    wallRef = new Firebase("https://<YOUR_FIREBASE>.firebaseio.com/walls"),
-    deviceRef = new Firebase("https://<YOUR_FIREBASE>.firebaseio.com/devices"),
+    config = require("config.json"),
+    wallRef = new Firebase(config.firebaseURL + "/walls"),
+    deviceRef = new Firebase(config.firebaseURL + "/devices"),
     wall = (function() {
 
       function printList(r) {

@@ -1,0 +1,22 @@
+{
+  "name": "hubot-devicewall",
+  "version": "0.0.1",
+  "description": "A hubot interface to update device endpoints",
+  "main": "device-wall.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patricksimpson/hubot-devicewall.git"
+  },
+  "keywords": [
+    "hubot"
+  ],
+  "author": "hubot-scripts",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patricksimpson/hubot-devicewall/issues"
+  },
+  "homepage": "https://github.com/patricksimpson/hubot-devicewall#readme"
+}

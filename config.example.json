@@ -1,3 +1,4 @@
 {
-  "firebaseUrl": "https://<YOUR_FIREBASE>.firebaseio.com"
+  "firebaseUrl": "https://<YOUR_FIREBASE>.firebaseio.com",
+  "firebaseSecret": "YOUR SECRET"
 }

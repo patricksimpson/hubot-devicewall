@@ -1,7 +1,11 @@
 var Firebase = require("firebase"),
-    config = require("config.json"),
-    wallRef = new Firebase(config.firebaseURL + "/walls"),
-    deviceRef = new Firebase(config.firebaseURL + "/devices"),
+    config = require("./config.json"),
+    FirebaseTokenGenerator = require("firebase-token-generator"),
+    tokenGenerator = new FirebaseTokenGenerator(config.firebaseSecret),
+    token = tokenGenerator.createToken({uid: "1", isAdmin: true}),
+    ref = new Firebase(config.firebaseUrl),
+    wallRef = new Firebase(config.firebaseUrl+ "/walls"),
+    deviceRef = new Firebase(config.firebaseUrl+ "/devices"),
     wall = (function() {
 
       function printList(r) {
@@ -71,6 +75,14 @@ var Firebase = require("firebase"),
         init: init
       };
     })();
+
+ref.authWithCustomToken("AUTH_TOKEN", function(error, authData) {
+  if (error) {
+    console.log("Authentication Failed!", error);
+  } else {
+    console.log("Authenticated successfully with payload:", authData);
+  }
+});
 
 wall.init();
 
